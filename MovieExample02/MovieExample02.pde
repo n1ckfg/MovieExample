@@ -21,6 +21,7 @@ import deadpixel.keystone.*;
 
 Keystone ks;
 CornerPinSurface surface;
+MovieClip clip1;
 
 PGraphics offscreen;
 
@@ -38,10 +39,12 @@ void setup() {
   // CornerPinSurface.
   // (The offscreen buffer can be P2D or P3D)
   offscreen = createGraphics(400, 300, P3D);
+  
+  clip1 = new MovieClip(this, "cat.mp4");
+  clip1.setPos(new PVector(offscreen.width/2, offscreen.height/2));
 }
 
-void draw() {
-
+void draw() { 
   // Convert the mouse coordinate into surface coordinates
   // this will allow you to use mouse events inside the 
   // surface from your screen. 
@@ -50,6 +53,7 @@ void draw() {
   // Draw the scene, offscreen
   offscreen.beginDraw();
   offscreen.background(255);
+  clip1.run();
   offscreen.fill(0, 255, 0);
   offscreen.ellipse(surfaceMouse.x, surfaceMouse.y, 75, 75);
   offscreen.endDraw();
