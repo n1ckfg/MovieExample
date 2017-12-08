@@ -25,10 +25,10 @@ class MovieClip {
     if (movie.available()) {
       movie.read();
     }
-    offscreen.imageMode(CENTER);
-    offscreen.tint(255, alpha);
-    offscreen.image(movie, p.x, p.y);
-    offscreen.noTint();
+    imageMode(CENTER);
+    tint(255, alpha);
+    image(movie, p.x, p.y);
+    noTint();
   }
   
   void run() { 
