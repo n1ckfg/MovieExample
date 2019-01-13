@@ -1,10 +1,10 @@
-class MovieClipKeystone extends MovieClip {
+class MovieSpriteKeystone extends MovieSprite {
 
   CornerPinSurface surface;
   PGraphics offscreen;
   boolean firstRun = true;
   
-  MovieClipKeystone(PApplet sketch, String fileName) {
+  MovieSpriteKeystone(PApplet sketch, String fileName) {
     super(sketch, fileName);
   }
 
